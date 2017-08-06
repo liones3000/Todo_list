@@ -7,14 +7,19 @@ console.clear();
 	$('#formAddTask').on('submit', function(event){
 		event.preventDefault();
 
+		var id = new Date().getTime();
+
 		var task = {
 			title: $(this).find('[name=title]').val(),
 			description: $(this).find('[name=description]').val(),
-			status: 1 //1-todo, 2 - in progress, 3 - done
+			// status: 2 //1-todo, 2 - in progress, 3 - done
+			status: $(this).find('[checked]').val(),
+			uid: id
 		};
+
 		addTask(task);
 
-		var id = new Date().getTime();
+
 		localStorage.setItem(id, JSON.stringify(task));
 
 		$('#modalAddTask').modal('hide');
@@ -25,11 +30,16 @@ console.clear();
 	function addTask(item){
 		var $div = $('<div>')
 			.addClass('list-group-item')
-			.appendTo('[data-status="' + task.status + '"] .list-group')
-			.text(item.title);
+			.appendTo('[data-status="' + item.status + '"] .list-group')
+			.text(item.title+' ['+item.description+']');
 
-		$('<button>').addClass('btn btn-danger btn-xs pull-right').text('delete').appendTo($div).on('click', function(even){
+		$('<button>').addClass('btn btn-danger btn-xs pull-right')
+		.text('delete')
+		.appendTo($div)
+		.on('click', function(even){
+			debugger;
 			($div).remove();
+			localStorage.removeItem(item.uid);
 		});
 }
 

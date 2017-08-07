@@ -8,15 +8,19 @@
 </head>
 <body>
 	<header><h1 class="text-center">Todo list</h1></header>
+
 	<section class="container">
 
-	<!-- Button trigger modal -->
-	
-	<div class="buttons clearfix">
-		<button type="button" class="btn btn-lg btn-primary pull-right" data-toggle="modal" data-target="#modalAddTask">
-		<span class="glyphicon glyphicon-plus"></span> Add task
-	</button>
-	</div>
+		<!-- Button trigger modal -->
+
+		<div class="buttons clearfix">
+			<button type="button" class="btn btn-lg btn-danger pull-right" id="delete">
+				<span class="glyphicon glyphicon-remove"></span> Remove all
+			</button>
+			<button type="button" class="btn btn-lg btn-primary pull-right" data-toggle="modal" data-target="#modalAddTask">
+				<span class="glyphicon glyphicon-plus"></span> Add task
+			</button>
+		</div>
 		
 		<!-- Nav tabs -->
 		
@@ -37,25 +41,46 @@
 		<div class="tab-content">
 			<div class="tab-pane active" id="todo" data-status ="1" role="tabpanel">
 				<div class="list-group">
-					<!-- <div class="list-group-item">first</div> -->
-					<!-- <div class="list-group-item">second</div> -->
 				</div>
 			</div>
 			<div class="tab-pane" id="inprogress" data-status ="2" role="tabpanel">
 				<div class="list-group">
-					<!-- <div class="list-group-item">3</div> -->
-					<!-- <div class="list-group-item">4</div> -->
 				</div>
 			</div>
 			<div class="tab-pane" id="Done" data-status ="3" role="tabpanel">
 				<div class="list-group">
-					<!-- <div class="list-group-item">5</div> -->
-					<!-- <div class="list-group-item">6</div> -->
 				</div>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-danger">
+					<div class="panel-heading">Should be done</div>
+					<div class="panel-body">Tasks count: <span data-count="1" class="badge">0</span></div>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+
+				<div class="panel panel-warning">
+					<div class="panel-heading">Will be done soon</div>
+					<div class="panel-body">Tasks count: <span data-count="2" class="badge">0</span></div>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+
+				<div class="panel panel-success">
+					<div class="panel-heading">Already done</div>
+					<div class="panel-body">Tasks count: <span data-count="3" class="badge">0</span></div>
+				</div>
+
+			</div>
+		</div>
 	</section>
-	
+
+
 	<!-- Modal -->
 	
 	<div class="modal fade" id="modalAddTask" tabindex="-1" role="dialog" aria-hidden="true">
@@ -67,18 +92,19 @@
 				<div class="modal-body">
 
 					<form id="formAddTask">
-					<div class="form-group">
-						<input type="text" name="title" class="form-control" placeholder="Title">
-					</div>
-					<div class="form-group">
-						<textarea name="description" placeholder="Description" class="form-control"></textarea>
-					</div>
-					<div class="form-group">Status
-						<input type="radio" name="status" value="1" checked>1</input>
-						<input type="radio" name="status" value="2">2</input>
-						<input type="radio" name="status" value="3">3</input>
-					</div>
+						<div class="form-group">
+							<input type="text" name="title" class="form-control" placeholder="Title">
+						</div>
+						<div class="form-group">
+							<textarea name="description" placeholder="Description" class="form-control"></textarea>
+						</div>
+						<div class="form-group">Status
+							<input type="radio" name="status" value="1" checked>1</input>
+							<input type="radio" name="status" value="2">2</input>
+							<input type="radio" name="status" value="3">3</input>
+						</div>
 					</form>
+
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>

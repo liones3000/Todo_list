@@ -1,3 +1,6 @@
 .tab-content {
 	margin: 15px 0;
 }
+.clearfix button:nth-child(odd) {
+	margin-left: 5px;
+}

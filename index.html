@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.min.css">
 	<script src="lib/jquery/dist/jquery.js"></script>
+
 </head>
 <body>
 	<header><h1 class="text-center">Todo list</h1></header>
@@ -14,7 +17,7 @@
 		<!-- Button trigger modal -->
 
 		<div class="buttons clearfix">
-			<button type="button" class="btn btn-lg btn-danger pull-right" id="delete">
+			<button type="button" class="btn btn-lg btn-danger pull-right mar5" id="delete">
 				<span class="glyphicon glyphicon-remove"></span> Remove all
 			</button>
 			<button type="button" class="btn btn-lg btn-primary pull-right" data-toggle="modal" data-target="#modalAddTask">
@@ -81,7 +84,7 @@
 	</section>
 
 
-	<!-- Modal -->
+	<!-- Modal ADD-->
 	
 	<div class="modal fade" id="modalAddTask" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -93,10 +96,18 @@
 
 					<form id="formAddTask">
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Title">
+							<input type="text" name="title" class="form-control" placeholder="Title"> <!-- TITLE -->
 						</div>
+						<div class="form-group"> <!-- date -->
+							<div class="input-group date" data-provide="datepicker">
+								<input type="text" name="date" class="form-control" placeholder="date"> <!-- Date -->
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div> <!-- date end -->
 						<div class="form-group">
-							<textarea name="description" placeholder="Description" class="form-control"></textarea>
+							<textarea name="description" placeholder="Description" class="form-control"></textarea> <!-- Description -->
 						</div>
 						<div class="form-group">Status
 							<input type="radio" name="status" value="1" checked>1</input>
@@ -113,7 +124,7 @@
 			</div>
 		</div>
 	</div>
-<!-- MODAL -->
+<!-- MODAL EDIT-->
 		<div class="modal fade" id="modalEditTask" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -123,10 +134,18 @@
 				<div class="modal-body">
 
 					<form id="formEditTask">
-					<input type="hidden" name="id">
+						<input type="hidden" name="id">
 						<div class="form-group">
 							<input type="text" name="title" class="form-control" placeholder="Title">
 						</div>
+						<div class="form-group"> <!-- date -->
+							<div class="input-group date" data-provide="datepicker">
+								<input type="text" name="date" class="form-control" placeholder="date"> <!-- Date -->
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div> <!-- date end -->
 						<div class="form-group">
 							<textarea name="description" placeholder="Description" class="form-control"></textarea>
 						</div>
@@ -167,7 +186,7 @@
 </div><!-- /.modal -->
 
 	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<script src="lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="js/handlers.js"></script>
 	<script src="js/script.js"></script>

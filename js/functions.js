@@ -19,11 +19,15 @@ function addTask(item, id){ //add task to page
 	.text(item.title+' ['+item.description+']');
 
 	$('<button>').addClass('btn btn-danger btn-xs pull-right btn-remove') //add button delete
-	.text('delete')
+	.addClass('glyphicon glyphicon-remove mar5')
 	.appendTo($div)
 
-	$('<button>').addClass('btn btn-warning btn-xs pull-right btn-edit') //add button delete
-	.text('edit')
+	$('<button>').addClass('btn btn-warning btn-xs pull-right btn-edit mar5') //add button delete
+	.addClass('glyphicon glyphicon-pencil')
+	.appendTo($div)
+
+	$('<button>').addClass('btn btn-default btn-xs pull-right btn-view') //add button view
+	.addClass('glyphicon glyphicon-eye-open')
 	.appendTo($div)
 
 } //end addTask

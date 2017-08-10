@@ -1,13 +1,12 @@
 console.clear();
 'use strict';
 
-$('#formAddTask').on('submit', handlersAddtask);
-$('#delete').on('click', handlersAlldelete);
-$('body').on('click', '.btn-remove', handlersRemovetask);
-$('body').on('click', '.btn-edit', handlersEdittask);
-$('#formEditTask').on('submit', handlersFormedit);
-
-$('#modalAddTask').on('shown.bs.modal', handlersModaladdTask);
+$('#formAddTask').on('submit', handlersAddTask);
+$('#delete').on('click', handlersAllDelete);
+$('body').on('click', '.btn-remove', handlersRemoveTask);
+$('body').on('click', '.btn-edit', handlersEditTask);
+$('#formEditTask').on('submit', handlersFormEdit);
+$('#modalAddTask').on('shown.bs.modal', handlersModalAddTask);
 
 (function(){
 for (var key in localStorage) { //restore storage item on page

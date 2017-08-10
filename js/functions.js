@@ -16,8 +16,11 @@ function addTask(item, id){ //add task to page
 	var $edit = $('<button>').addClass('btn btn-warning btn-xs pull-right btn-edit').append('<span class="glyphicon glyphicon-pencil">');
 // debugger;
 	var $a = $('<a>')
-	.attr({'data-toogle':'collapse', 'data-parent': '#accordion', 'href':'#'+id})
-	.text(item.title);
+	.attr({'data-toogle':'collapse', 'data-parent': '#accordion', 'href':'#'+id, 'aria-expanded':'true', 'aria-controls':id})
+	.text(item.title)
+	.on('click', function(){
+		$('#accordion').collapse();
+	})
 
 	var $panelTitle = $('<h4>')
 	.addClass('panel-title')
@@ -27,7 +30,8 @@ function addTask(item, id){ //add task to page
 
 	var $panelHeading = $('<div>')
 	.addClass('panel-heading')
-	// .attr('role','tab')
+	.attr('role','tab')
+	.attr('id', 'one')
 	.append($panelTitle);
 
 	var $panelBody = $('<div>')
@@ -35,11 +39,10 @@ function addTask(item, id){ //add task to page
 	.text(item.description);
 
 	var $collapse = $('<div>')
-	// .attr({'id':id, 'role':'tabepanel'})
-	.attr('id', id)
+	.attr({'aria-labelledby':'one', 'role':'tabepanel'})
+	.attr('id', ''+id)
 	.addClass('panel-collapse collapse in')
 	.append($panelBody);
-
 
 	var $div = $('<div>')
 	.addClass('panel panel-default')

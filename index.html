@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.min.css">
 	<script src="lib/jquery/dist/jquery.js"></script>
-
+	
 </head>
 <body>
 	<header><h1 class="text-center">Todo list</h1></header>
@@ -43,19 +43,20 @@
 		
 		<div class="tab-content" id="task-list">
 			<div class="tab-pane active" id="todo" data-status ="1" role="tabpanel">
-				<div class="list-group">
+				<div class="panel-group" id="accordion">
+
 				</div>
 			</div>
 			<div class="tab-pane" id="inprogress" data-status ="2" role="tabpanel">
-				<div class="list-group">
+				<div class="panel-group" id="accordion">
 				</div>
 			</div>
 			<div class="tab-pane" id="Done" data-status ="3" role="tabpanel">
-				<div class="list-group">
+				<div class="panel-group" id="accordion">
 				</div>
 			</div>
 		</div>
-
+				<!-- COUNTS -->
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="panel panel-danger">

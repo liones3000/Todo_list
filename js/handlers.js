@@ -53,7 +53,7 @@ function handlersFormEdit(event){ //form
 
 
 	localStorage.setItem(id, JSON.stringify(task)); //add task for storage
-	
+
 	$('#task-list [data-id="'+id+'"]').remove();
 
 	addTask(task, id);
@@ -63,7 +63,7 @@ function handlersFormEdit(event){ //form
 }
 function handlersAllDelete(){ //Button delete all
 	$('#modalConfirm').modal('show').on('click', '#ok', function(){
-		var obj = $('div').filter('.list-group-item').remove();
+		var obj = $('div').filter('.panel-default').remove();
 		localStorage.clear();
 		countStatus();
 
